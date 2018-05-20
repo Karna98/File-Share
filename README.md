@@ -1,4 +1,4 @@
-# File-Sharing-
+# File-Sharing
 
 Python based application to share file from one device to another on same network.
 
@@ -30,3 +30,6 @@ os                   -   Using operating system dependent functionality
 
 sys                  -   Access to some variables used or maintained by the interpreter
 
+# Contributions
+
+Contributions are welcome
