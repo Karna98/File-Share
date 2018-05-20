@@ -10,13 +10,13 @@ This application emphasizes on sharing of files on the same network ie. either h
 
 It is easy, fast and secure transfer between two devices.
 
-# Running the app:
+# Running the app
 
 Open using CMD or Python IDLE or any other cross-platform editor
 
 Run Home_1.py
 
-# Required modules :
+# Required modules 
 
 tkinter           	 -   For GUI  
 
