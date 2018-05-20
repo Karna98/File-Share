@@ -14,7 +14,7 @@ It is easy, fast and secure transfer between two devices.
 
 Open using CMD or Python IDLE or any other cross-platform editor
 
-Run Home_1.py
+Run Home.py
 
 # Required modules 
 
@@ -32,4 +32,4 @@ sys                  -   Access to some variables used or maintained by the inte
 
 # Contributions
 
-Contributions are welcome
+Contributions are welcome.
