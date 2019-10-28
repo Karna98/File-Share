@@ -8,6 +8,7 @@ import socket
 from subprocess import Popen 
 from tkinter import *
 from tkinter import filedialog
+import re
 
 class fileShare:
     def __init__(self, obj):
@@ -19,6 +20,18 @@ class fileShare:
             self.fileCacheDir = self.currentWrokingDir + '/fileCache'
         self.subProcessId = ''
         self.homeFrame()
+
+    def ipAddr(self):
+        regex = '''^(25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.( 
+                    25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.( 
+                    25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)\.( 
+                    25[0-5]|2[0-4][0-9]|[0-1]?[0-9][0-9]?)'''
+        listOfNetworks = socket.getaddrinfo(socket.gethostname(), None)
+        validIp = []
+        for network in listOfNetworks:
+            if(re.search(regex, network[4][0])):
+                validIp.append(network[4][0])
+        return validIp
 
     def all_children (self, window) :
         _list = window.winfo_children()
@@ -49,15 +62,16 @@ class fileShare:
             label.pack()
 
     def closeConnection(self):
-        self.subProcessId.kill()
-        if ( not os._exists(self.fileCacheDir) ):
+        if (self.subProcessId != ''):
+            self.subProcessId.kill()
+        if ( os._exists(self.fileCacheDir) ):
             shutil.rmtree(self.fileCacheDir)
         quit()
 
     def establishConnection(self, frame): 
-        self.subProcessId = Popen("cd 1" + self.fileCacheDir + " && python -m http.server",shell=True) 
+        self.subProcessId = Popen("cd " + self.fileCacheDir + " && python -m http.server",shell=True) 
         print(self.subProcessId)
-        label = Label(frame, text = 'Connection Established to 192.168.0.101:8080 !!')
+        label = Label(frame, text = 'Connection Established to' + ' #'.join(self.ipAddr()) + '!!!')
         label.pack()
 
     def homeFrame(self):
@@ -74,7 +88,7 @@ class fileShare:
         b3.pack(pady = 20)
 
     def sendFrame(self, obj):
-        self.get_Host_name_IP()
+        print(self.ipAddr())
         frame = Frame(obj, width = 500, height = 500)
         frame.pack(pady=80)
 
