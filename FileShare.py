@@ -69,7 +69,9 @@ class fileShare:
         quit()
 
     def establishConnection(self, frame): 
-        self.subProcessId = Popen("cd " + self.fileCacheDir + " && python -m http.server",shell=True) 
+        cmd = "cd " + self.fileCacheDir + " && python -m http.server"
+        print(cmd)
+        self.subProcessId = Popen(cmd,shell=False) 
         print(self.subProcessId)
         label = Label(frame, text = 'Connection Established to' + ' #'.join(self.ipAddr()) + '!!!')
         label.pack()
