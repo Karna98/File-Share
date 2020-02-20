@@ -1,4 +1,4 @@
-# File-Sharing
+# File-Share
 
 Python based application to share file from one device to another on same network.
 
@@ -10,25 +10,24 @@ This application emphasizes on sharing of files on the same network ie. either h
 
 It is easy, fast and secure transfer between two devices.
 
-# Running the app
+# Running the app  
+Run Main.py
 
-Open using CMD or Python IDLE or any other cross-platform editor
-
-Run Home.py
-
-# Required modules 
-
-tkinter           	 -   For GUI  
-
-subprocess           -   spawn new processes 
-
-PIL                  -   Python Imaging Library
-
-shutil               -   Operations on files and collections of files
-
-os                   -   Using operating system dependent functionality
-
-sys                  -   Access to some variables used or maintained by the interpreter
+# Screenshots
+## 1. Home Screen  
+![Home Screen](/images/home.png)
+## 2. Send File
+2.1 Send Screen  
+![Send Screen](/images/sendScreen.PNG)  
+2.2 After Selecting File  
+![Selecting File](/images/sendSelectingFile.PNG)  
+2.3 Establishing Connection  
+![Establishing Connection](/images/sendEstablishingConnection.PNG)  
+## 3. Receive File  
+3.1 Receive Screen  
+![Receive Screen](/images/receiveScreen.PNG)  
+3.2 Receive File Page  
+![File Page](/images/receiveFilePage.PNG)  
 
 # Contributions
 
